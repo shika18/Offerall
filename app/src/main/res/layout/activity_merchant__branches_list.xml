@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingLeft="20dp"
+    android:paddingBottom="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="20dp"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/linear">
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/addbr"
+            />
+    </RelativeLayout>
+
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear"
+        android:id="@+id/branchList">
+
+    </ListView>
+
+
+
+</RelativeLayout>

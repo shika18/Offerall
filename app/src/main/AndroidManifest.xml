@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.shika.boo">
+
+    <permission
+        android:name="in.wptrafficanalyzer.locationingooglemapv2.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="in.wptrafficanalyzer.locationingooglemapv2.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you mQust specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <application
+        android:name=".AppController"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:allowBackup">
+        <activity android:name=".SignUp" />
+        <activity android:name=".SignIn" />
+        <activity
+            android:name=".MainActivity"
+            android:label="Categories"
+            android:parentActivityName=".MapsActivity" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+
+        <activity
+            android:name=".MapsActivity"
+            android:label="Offerall" />
+        <activity android:name=".Profile" />
+        <activity
+            android:name=".Favourites"
+            android:label="Favourites"
+            android:parentActivityName=".MapsActivity" />
+        <activity
+            android:name=".Interestsadapter"
+            android:label="Interests"
+            android:parentActivityName=".MapsActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDsiveq2La8Bq-jkM1lUwQ0prTOlZAGynE" />
+        <meta-data
+            android:name="android.app.default_searchable"
+            android:value=".Search_Place" />
+
+        <activity
+            android:name=".BaseActivity"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity android:name=".NavActivity" />
+        <activity
+            android:name=".Offer_Page"
+            android:label="Offer "
+            android:parentActivityName=".BranchActivity" />
+        <activity android:name=".RecyclerView_Activity" />
+        <activity
+            android:name=".BranchActivity"
+            android:label="Branch"
+            android:parentActivityName=".Try" />
+        <activity
+            android:name=".editprofile"
+            android:label="EditProfile"
+            android:parentActivityName=".MapsActivity" />
+        <activity android:name=".Merchant_signup" />
+        <activity android:name=".Merchant_Home" />
+        <activity
+            android:name=".Branches_merchant"
+            android:label="Branches"
+            android:parentActivityName=".Merchant_Home" />
+        <activity
+            android:name=".Branch_details"
+            android:label="Add Branch"
+            android:parentActivityName=".Branches_merchant" />
+        <activity
+            android:name=".BeginActivity"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".TT" />
+        <activity android:name=".Cong" />
+        <activity
+            android:name=".Try"
+            android:label="Store"
+            android:launchMode="singleTop"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".SavedOffers"
+            android:label="Saved offers"
+            android:parentActivityName=".MapsActivity" />
+        <activity
+            android:name=".RewardsActivity"
+            android:parentActivityName=".MapsActivity" />
+        <activity android:name=".Saved_offActivity" />
+        <activity
+            android:name=".SavedStoresActivity"
+            android:label="saved stores"
+            android:parentActivityName=".MapsActivity" />
+        <activity android:name=".MapssActivity" />
+        <activity
+            android:name=".Merchant_addmenu"
+            android:label="Menu Manage"
+            android:parentActivityName=".Merchant_Home" />
+        <activity
+            android:name=".Merchant_add_offer"
+            android:label="Add Offer"
+            android:parentActivityName=".Merchant_Home" />
+        <activity
+            android:name=".Merchant_Reward_main"
+            android:label="Rewards System"
+            android:parentActivityName=".SecondHome_Branch" />
+        <activity
+            android:name=".Merchant_points"
+            android:label="Points System"
+            android:parentActivityName=".Merchant_Reward_main" />
+        <activity
+            android:name=".Merchant_RewardsSystem"
+            android:label="Deals System"
+            android:parentActivityName=".Merchant_Reward_main" />
+        <activity android:name=".AfterBegin" />
+
+        <service
+            android:name=".BackgroundMapService"
+            android:enabled="true" />
+
+        <activity
+            android:name=".Merchant_After_menu"
+            android:label="Manage Menus"
+            android:parentActivityName=".Merchant_Home" />
+        <activity android:name=".Merchant_Upload_menu"
+            android:label="Upload Menu"
+            android:parentActivityName=".Merchant_After_menu"    />
+        <activity
+            android:name=".MerchantMenu"
+            android:label="Your Menus"
+            android:parentActivityName=".Merchant_After_menu" />
+        <activity
+            android:name=".Merchant_Profile"
+            android:label="Place Profile"
+            android:parentActivityName=".Merchant_Home" />
+        <activity
+            android:name=".Merchant_Add_Branch"
+            android:label="Add Branch"
+            android:parentActivityName=".Merchant_Home" />
+        <activity
+            android:name=".Merchant_Branch_Home"
+            android:label="Branch Home"
+            android:parentActivityName=".Merchant_Branches_list" />
+        <activity
+            android:name=".Merchant_Add_Reward"
+            android:label="Add Reward"
+            android:parentActivityName=".Merchant_Reward_main" />
+        <activity
+            android:name=".Merchant_Branch_Profile"
+            android:label="Branch Profile"
+            android:parentActivityName=".SecondHome_Branch" />
+        <activity
+            android:name=".Merchant_Offers"
+            android:label="Offers"
+            android:parentActivityName=".Merchant_Branch_ManageOffer" />
+        <activity
+            android:name=".Merchant_Branches_list"
+            android:label="Branches"
+            android:parentActivityName=".Merchant_Home" />
+        <activity
+            android:name=".Merchant_Branch_Pass"
+            android:label="Branch Validate"
+            android:parentActivityName=".Merchant_Branches_list" />
+        <activity
+            android:name=".Merchant_Branch_ManageOffer"
+            android:label="Manage Offers"
+            android:parentActivityName=".SecondHome_Branch" />
+        <activity
+            android:name=".Merchant_Branch_AddPoints"
+            android:label="Add Points"
+            android:parentActivityName=".Merchant_Reward_main" />
+        <activity
+            android:name=".Merchant_Rewards_list"
+            android:label="Rewards"
+            android:parentActivityName=".Merchant_Reward_main" />
+        <activity
+            android:name=".Branch_MapActivity"
+            android:label="Pickup Branch Location"
+            android:parentActivityName=".Merchant_Add_Branch" />
+        <activity android:name=".sign_in_merchant" />
+        <activity android:name=".interestsactivity" />
+        <activity
+            android:name=".Edit_offer"
+            android:label="Edit Offer"
+            android:parentActivityName=".Merchant_Offers" />
+        <activity
+            android:name=".Edit_Reward"
+            android:label="Edit Reward"
+            android:parentActivityName=".Merchant_Rewards_list" />
+        <activity
+            android:name=".Setting"
+            android:label="Notfications Setting"
+            android:parentActivityName=".MapsActivity" />
+        <activity
+            android:name=".Search_Place"
+            android:label="Search Results"
+            android:parentActivityName=".MapsActivity" />
+        <activity android:name=".Merchant_Edit_profile" />
+        <activity android:name=".Branch_Edit_profile" />
+        <activity android:name=".ForgotPassword" />
+        <activity android:name=".ResetPassword" />
+        <activity android:name=".newpassword" />
+        <activity android:name=".forgotpasswordmerchant" />
+        <activity android:name=".Resetpasswordmerchant" />
+        <activity android:name=".newpasswordmerchant"></activity>
+        <activity
+            android:name=".SecondHome"
+            android:label="Place Home"></activity>
+        <activity
+            android:name=".SecondHome_Branch"
+            android:label="Branch Home"></activity>
+    </application>
+
+</manifest>
